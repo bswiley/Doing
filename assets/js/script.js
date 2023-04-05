@@ -2,7 +2,8 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  //The variables below are set up to access the text in the respective textareas of each hour
+  //The variables below are to access the 'save" buttons for the  eventListeners
+  //used later.
   var b18 = $(".18A")
   var b17 = $(".17A")
   var b16 = $(".16A")
@@ -14,13 +15,14 @@ $(function () {
   var b10 = $(".10A")
   var b9 = $(".9A")
   var b8 = $(".8A")
-
+//this starts the continual refressing of the webpage so that
+//the clock changes every minute. 
   var timeInterval = setInterval(function () {
       displayTime();}, 1000);
   
 
-//these are the sets of functions that save the data when the 
-//buttons are pushed.
+//these are the sets of functions that save the data in  
+//the respective textareas when the buttons are pushed.
   function set8(){
     var apt8 = { am8: $(".8AMT").val(), }
     localStorage.setItem("apt8", JSON.stringify(apt8))
@@ -66,7 +68,12 @@ $(function () {
     var apt18 = {am18: $(".18AMT").val(),}
     localStorage.setItem("apt18", JSON.stringify(apt18))
   }
-//these are the other functions fired by the buttons
+/*these are the other functions fired by the buttons.
+"markSaved" notifies the user that the data was saved
+with the text "saved to local storage" in red at the top
+of the page but also turns the background of the entire website 
+pink so the user doesn't have to see the top of the 
+website to know saving is taking place */
 function stopDefault(e){
 e.preventDefault();
 }
@@ -81,75 +88,81 @@ $('body').css("background-color","white")
 }
 
 
-  //This draws the data from localstorage on first use so each
-//refrest starts with the past data 
+  /*This draws the data from localstorage on first use so each
+  textarea starts with the past data.  If there isn't past data, 
+  it creates it as "" to establish it in localStorage*/
 if (localStorage.getItem("apt8") === null) {
-  localStorage.setItem("apt8", JSON.stringify("am: "))
-}
+  localStorage.setItem("apt8", JSON.stringify({"am8":""}))}
 var apt8 = JSON.parse(localStorage.getItem("apt8"));
 console.log(apt8)
 $(".8AMT").val(apt8.am8);
+
 if (localStorage.getItem("apt9") === null) {
-  var apt9 = ""
-  localStorage.setItem("apt9", JSON.stringify(apt9))
-}
-console.log(apt9)
+  localStorage.setItem("apt9", JSON.stringify({"am9":""}))}
+var apt9 = JSON.parse(localStorage.getItem("apt9"));
+console.log(apt9.am9)
 $(".9AMT").val(apt9.am9);
+
+
 if (localStorage.getItem("apt10") === null) {
-  var apt10 = ""
-  localStorage.setItem("apt10", JSON.stringify(apt10))
-}
-console.log(apt10)
+  localStorage.setItem("apt10", JSON.stringify({"am10":""}))}
+var apt10 = JSON.parse(localStorage.getItem("apt10"));
+console.log(apt10.am10)
 $(".10AMT").val(apt10.am10);
+
+
 if (localStorage.getItem("apt11") === null) {
-  var apt11 = ""
-  localStorage.setItem("apt11", JSON.stringify(apt11))
-}
-console.log(apt11)
+  localStorage.setItem("apt11", JSON.stringify({"am11":""}))}
+var apt11 = JSON.parse(localStorage.getItem("apt11"));
+console.log(apt11.am11)
 $(".11AMT").val(apt11.am11);
+
+
 if (localStorage.getItem("apt12") === null) {
-  var apt12 = ""
-  localStorage.setItem("apt12", JSON.stringify(apt12))
-}
-console.log(apt12)
+  localStorage.setItem("apt12", JSON.stringify({"am12":""}))}
+var apt12 = JSON.parse(localStorage.getItem("apt12"));
+console.log("apt12", apt12.am12)
 $(".12AMT").val(apt12.am12);
-if (localStorage.getItem("apt13") === null) {
-  var apt13 = ""
-  localStorage.setItem("apt13", JSON.stringify(apt13))
-}
-console.log(apt13)
+
+
+if (localStorage.getItem("apt13") === null) {localStorage.setItem("apt13", JSON.stringify({"am13":""}))}
+var apt13 = JSON.parse(localStorage.getItem("apt13"));
+console.log("apt13", apt13.am13)
 $(".13AMT").val(apt13.am13);
-if (localStorage.getItem("apt14") === null) {
-  var apt14 = ""
-  localStorage.setItem("apt14", JSON.stringify(apt14))
-}
-console.log(apt14)
+
+
+if (localStorage.getItem("apt14") === null) {localStorage.setItem("apt14", JSON.stringify({"am14":""}))}
+var apt14 = JSON.parse(localStorage.getItem("apt14"));
+console.log("apt14", apt14.am14)
 $(".14AMT").val(apt14.am14);
-if (localStorage.getItem("apt15") === null) {
-  var apt15 = ""
-  localStorage.setItem("apt15", JSON.stringify(apt15))
-}
-console.log(apt15)
+
+
+
+if (localStorage.getItem("apt15") === null) {localStorage.setItem("apt15", JSON.stringify({"am15":""}))}
+var apt15 = JSON.parse(localStorage.getItem("apt15"));
+console.log("apt15", apt15.am15)
 $(".15AMT").val(apt15.am15);
-if (localStorage.getItem("apt16") === null) {
-  var apt16 = ""
-  localStorage.setItem("apt16", JSON.stringify(apt16))
-}
-console.log(apt16)
+
+
+if (localStorage.getItem("apt16") === null) {localStorage.setItem("apt16", JSON.stringify({"am16":""}))}
+var apt16 = JSON.parse(localStorage.getItem("apt16"));
+console.log("apt16", apt16.am16)
 $(".16AMT").val(apt16.am16);
-if (localStorage.getItem("apt17") === null) {
-  var apt17 = ""
-  localStorage.setItem("apt17", JSON.stringify(apt17))
-}
-console.log(apt17)
+
+
+if (localStorage.getItem("apt17") === null) {localStorage.setItem("apt17", JSON.stringify({"am17":""}))}
+var apt17 = JSON.parse(localStorage.getItem("apt17"));
+console.log("apt17", apt17.am17)
 $(".17AMT").val(apt17.am17);
-if (localStorage.getItem("apt18") === null) {
-  var apt18 = ""
-  localStorage.setItem("apt18", JSON.stringify(apt18))
-}
-console.log(apt18)
+
+
+if (localStorage.getItem("apt18") === null) {localStorage.setItem("apt18", JSON.stringify({"am18":""}))}
+var apt18 = JSON.parse(localStorage.getItem("apt18"));
+console.log("apt18", apt18.am18)
 $(".18AMT").val(apt18.am18);
-  //This function displays the day and time and sets up the colors
+
+
+//This function displays the day and time and sets up the colors
   //of the textareas as the day passes
   function displayTime() {
   var today = dayjs();
@@ -228,45 +241,14 @@ $(".18AMT").val(apt18.am18);
 
    displayTime()
   setInterval(displayTime, 1000);
-var apt8 = JSON.parse(localStorage.getItem("apt8"));
-console.log(apt8)
-$(".8AMT").val(apt8.am8);
-var apt9 = JSON.parse(localStorage.getItem("apt9"));
-console.log(apt9)
-$(".9AMT").val(apt9.am9);
-var apt10 = JSON.parse(localStorage.getItem("apt10"));
-console.log(apt10)
-$(".10AMT").val(apt10.am10);
-var apt11 = JSON.parse(localStorage.getItem("apt11"));
-console.log(apt11)
-$(".11AMT").val(apt11.am11);
-var apt12 = JSON.parse(localStorage.getItem("apt12"));
-console.log(apt12)
-$(".12AMT").val(apt12.am12);
-var apt13 = JSON.parse(localStorage.getItem("apt13"));
-console.log(apt13)
-$(".13AMT").val(apt13.am13);
-var apt14 = JSON.parse(localStorage.getItem("apt14"));
-console.log(apt14)
-$(".14AMT").val(apt14.am14);
-var apt15 = JSON.parse(localStorage.getItem("apt15"));
-console.log(apt15)
-$(".15AMT").val(apt15.am15);
-var apt16 = JSON.parse(localStorage.getItem("apt16"));
-console.log(apt16)
-$(".16AMT").val(apt16.am16);
-var apt17 = JSON.parse(localStorage.getItem("apt17"));
-console.log(apt17)
-$(".17AMT").val(apt17.am17);
-var apt18 = JSON.parse(localStorage.getItem("apt18"));
-console.log(apt18.am18)
-$(".18AMT").val(apt18.am18);
+
+
 //these are the EventListeners that target the functions above 
 //to save the data in the textarea where the button is pushed
 
 b9[0].addEventListener("click", function(e){
   stopDefault(e);
-  set8();
+  set9();
   markSaved();
  }) 
 
