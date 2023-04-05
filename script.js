@@ -23,48 +23,48 @@ $(function () {
 //buttons are pushed.
   function set8(){
     var apt8 = { am8: $(".8AMT").val(), }
-    localStorage.setItem("apt8", JSON.stringify(apt8))
+    localStorage.setItem("apt8", JSON.stringify(apt8))||"";
   }
   function set9(){
     var apt9 = {am9: $(".9AMT").val(),}
-    localStorage.setItem("apt9", JSON.stringify(apt9));
+    localStorage.setItem("apt9", JSON.stringify(apt9))||"";
   }
   function set10(){
     var apt10 = {am10: $(".10AMT").val(),}
-    localStorage.setItem("apt10", JSON.stringify(apt10));
+    localStorage.setItem("apt10", JSON.stringify(apt10))||"";
   }
   function set11(){
   var apt11 = {am11: $(".11AMT").val(),}
-    localStorage.setItem("apt11", JSON.stringify(apt11));
+    localStorage.setItem("apt11", JSON.stringify(apt11))||"";
   }
   function set12(){
     var apt12 = {am12: $(".12AMT").val(),}
     console.log(apt12)
-    localStorage.setItem("apt12", JSON.stringify(apt12));
+    localStorage.setItem("apt12", JSON.stringify(apt12))||"";
   }
   function set13(){
     var apt13 = {am13: $(".13AMT").val(),}
-    localStorage.setItem("apt13", JSON.stringify(apt13));
+    localStorage.setItem("apt13", JSON.stringify(apt13))||"";
   }
   function set14(){
     var apt14 = {am14: $(".14AMT").val(),}
-    localStorage.setItem("apt14", JSON.stringify(apt14));
+    localStorage.setItem("apt14", JSON.stringify(apt14))||"";
   }
   function set15(){
     var apt15 = {am15: $(".15AMT").val(),}
-    localStorage.setItem("apt15", JSON.stringify(apt15));
+    localStorage.setItem("apt15", JSON.stringify(apt15))||"";
   }
   function set16(){
     var apt16 = {am16: $(".16AMT").val(),}
-    localStorage.setItem("apt16", JSON.stringify(apt16));
+    localStorage.setItem("apt16", JSON.stringify(apt16))||"";
   }
   function set17(){
     var apt17 = {am17: $(".17AMT").val(),}
-    localStorage.setItem("apt17", JSON.stringify(apt17));
+    localStorage.setItem("apt17", JSON.stringify(apt17))||"";
   }
   function set18(){
     var apt18 = {am18: $(".18AMT").val(),}
-    localStorage.setItem("apt18", JSON.stringify(apt18));
+    localStorage.setItem("apt18", JSON.stringify(apt18))||"";
   }
 //these are the other functions fired by the buttons
 function stopDefault(e){
